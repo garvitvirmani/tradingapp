@@ -1,0 +1,22 @@
+import { ChartComponent } from "./ChartComp";
+const initialData = [
+  { time: "2018-12-22", open: 109.87, high: 14.9, low: 85.66, close: 111.26 },
+  { time: "2018-12-23", open: 1.87, high: 1.69, low: 8.66, close: 111.26 },
+  { time: "2018-12-24", open: 109.87, high: 114.69, low: 85.66, close: 111.26 },
+  { time: "2018-12-25", open: 48.87, high: 1.69, low: 5.66, close: 111.26 },
+  { time: "2018-12-26", open: 109.87, high: 114.69, low: 85.66, close: 111.26 },
+  { time: "2018-12-27", open: 10.87, high: 114.69, low: 85.66, close: 111.26 },
+  { time: "2018-12-28", open: 109.87, high: 114.69, low: 85.66, close: 111.26 },
+  { time: "2018-12-29", open: 48.87, high: 1.69, low: 5.66, close: 111.26 },
+];
+
+function App() {
+  return (
+    <div className="App">
+      <div>Trading App</div>
+      <ChartComponent data={initialData}></ChartComponent>
+    </div>
+  );
+}
+
+export default App;
