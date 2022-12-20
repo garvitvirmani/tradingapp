@@ -1,0 +1,77 @@
+body {
+  color: grey;
+}
+
+.navbar {
+  height: 100px;
+  width: 100%;
+  background: #1f1f24;
+}
+.logo {
+  width: 2%;
+  display: flex;
+  padding: 2%;
+  margin-left: 2%;
+}
+.menu {
+  display: flex;
+  margin-top: -5.3%;
+  flex-direction: row;
+  margin-left: 15%;
+}
+.a,
+.b,
+.c,
+.d {
+  margin-left: 5%;
+  font-size: 16px;
+}
+.a:hover {
+  border-bottom: 0.5px solid white;
+  color: white;
+}
+.b:hover {
+  border-bottom: 0.5px solid white;
+  color: white;
+}
+.c:hover {
+  border-bottom: 0.5px solid white;
+  color: white;
+}
+.d:hover {
+  border-bottom: 0.5px solid white;
+  color: white;
+}
+
+.icons {
+  margin-top: -4%;
+  margin-left: 70%;
+}
+.t,
+.u,
+.v,
+.x {
+  width: 6%;
+  margin-left: 8%;
+  margin-top: 2.5%;
+  display: inline-block;
+}
+.coin {
+  margin-top: 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #2c2c34;
+}
+.coinHeading {
+  margin-left: 3%;
+}
+.props {
+  display: flex;
+  flex-direction: row;
+}
+h4,
+p {
+  margin-left: 45px;
+}

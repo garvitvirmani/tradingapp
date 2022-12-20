@@ -18,11 +18,11 @@ export const ChartComponent = ({ data }) => {
 
     const chart = createChart(chartContainerRef.current, {
       layout: {
-        background: { type: ColorType.Solid, color: "white" },
-        textColor: "black",
+        background: { type: ColorType.Solid, color: "#171a24" },
+        textColor: "white",
       },
       width: chartContainerRef.current.clientWidth,
-      height: 300,
+      height: 310,
     });
     chart.timeScale().fitContent();
 

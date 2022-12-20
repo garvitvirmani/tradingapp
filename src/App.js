@@ -5,16 +5,44 @@ import { useEffect } from "react";
 import axios from "axios";
 import { createChart } from "lightweight-charts";
 import { ChartComponent } from "./ChartComp";
-const baseURL =
-  "https://api.binance.com/api/v3/klines?symbol=BNBUSDT&interval=1d";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import Navbar from "./Navbar";
+import Coin from "./Coin";
+import CopyRight from "./copyright";
+const URL = "https://api.binance.com/api/v3/klines?symbol=BNBUSDT&interval=1d";
+
+const dark = createTheme({
+  palette: {
+    primary: {
+      main: "#FFFFFF",
+      contrastText: "#FFFFFF",
+    },
+  },
+  // typography: {
+  //   fontFamily: "Poppins",
+  //   h1: {
+  //     fontSize: "40px",
+  //     fontWeight: 600,
+  //   },
+  //   h2: {
+  //     fontSize: "18px",
+  //     fontWeight: 400,
+  //   },
+  //   h3: {
+  //     fontWeight: 400,
+  //     fontSize: "16px",
+  //   },
+  // },
+});
 
 function App() {
   const [post, setPost] = useState([]);
 
   useEffect(() => {
-    axios.get(baseURL).then((res) => {
+    axios.get(URL).then((res) => {
       console.log(res.data);
       res.data.map((each) => {
+        // dummy entry for blueprint
         var curEntry = {
           time: "2018-12-22",
           open: 109.87,
@@ -22,37 +50,38 @@ function App() {
           low: 85.66,
           close: 111.26,
         };
-        let options = {
-          hour: "numeric",
-          minute: "numeric",
-          dayPeriod: "short",
-        };
-        //    console.log(each[0]);
+
+        //converting time-stamp form  API to suitable format for Chart
         var date = new Date(each[0]);
-        //  console.log(date);
         var month = (date.getMonth() + 1).toString().padStart(2, "0");
         var day = date.getDate().toString().padStart(2, "0");
         var year = date.getFullYear();
 
         var nowTime = year + "-" + month + "-" + day;
-        // console.log(nowTime);
+
+        // storing new Entry
         curEntry.time = nowTime;
         curEntry.open = each[1];
         curEntry.high = each[2];
         curEntry.low = each[3];
         curEntry.close = each[4];
 
+        // updating the chart (LIVE-UPDATE)
+        // could be optimize further
         setPost((post) => [...post, curEntry]);
       });
     });
   }, [post]);
 
   return (
-    <div className="App">
-      <div>Trading App</div>
-      {/* <div>{console.log(initialData)}</div> */}
-      <ChartComponent data={post}></ChartComponent>
-    </div>
+    <ThemeProvider theme={dark}>
+      <div className="App">
+        <Navbar></Navbar>
+        <Coin></Coin>
+        <ChartComponent data={post}></ChartComponent>
+        <CopyRight></CopyRight>
+      </div>
+    </ThemeProvider>
   );
 }
 
