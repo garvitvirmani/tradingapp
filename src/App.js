@@ -18,21 +18,21 @@ const dark = createTheme({
       contrastText: "#FFFFFF",
     },
   },
-  // typography: {
-  //   fontFamily: "Poppins",
-  //   h1: {
-  //     fontSize: "40px",
-  //     fontWeight: 600,
-  //   },
-  //   h2: {
-  //     fontSize: "18px",
-  //     fontWeight: 400,
-  //   },
-  //   h3: {
-  //     fontWeight: 400,
-  //     fontSize: "16px",
-  //   },
-  // },
+  typography: {
+    fontFamily: "Poppins",
+    h1: {
+      fontSize: "40px",
+      fontWeight: 600,
+    },
+    h2: {
+      fontSize: "18px",
+      fontWeight: 400,
+    },
+    h3: {
+      fontWeight: 400,
+      fontSize: "16px",
+    },
+  },
 });
 
 function App() {

@@ -3,13 +3,7 @@ import React, { useEffect, useRef } from "react";
 
 export const ChartComponent = ({ data }) => {
   const chartContainerRef = useRef();
-  /*colors: {
-      backgroundColor = "white",
-      lineColor = "#2962FF",
-      textColor = "black",
-      areaTopColor = "#2962FF",
-      areaBottomColor = "rgba(41, 98, 255, 0.28)",
-    },*/
+
   useEffect(() => {
     console.log(data);
     const handleResize = () => {
@@ -22,7 +16,7 @@ export const ChartComponent = ({ data }) => {
         textColor: "white",
       },
       width: chartContainerRef.current.clientWidth,
-      height: 310,
+      height: 350,
     });
     chart.timeScale().fitContent();
 
